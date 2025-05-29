@@ -44,15 +44,13 @@ class Point:
 
 class Triangle:
     def __init__(self, vertice1, vertice2, vertice3):
-        self.__vertice1 = vertice1
-        self.__vertice2 = vertice2
-        self.__vertice3 = vertice3
+        self.__vertices = [vertice1,vertice2,vertice3] # points are stored inside the object as a private list
        
 
     def perimeter(self):
-        length_side_1 = self.__vertice1.distance_from_point(self.__vertice2) #calculate length of first side of triangle from the distance between boundarying vertice 1 & 2
-        length_side_2 = self.__vertice2.distance_from_point(self.__vertice3) #calculate length of second side of triangle from the distance between boundarying vertice 2 & 3
-        length_side_3 = self.__vertice3.distance_from_point(self.__vertice1) #calculate length of third side of triangle from the distance between boundarying vertice 3 & 1
+        length_side_1 = self.__vertices[0].distance_from_point(self.__vertices[1]) #calculate length of first side of triangle from the distance between boundarying vertice 1 & 2
+        length_side_2 = self.__vertices[1].distance_from_point(self.__vertices[2]) #calculate length of second side of triangle from the distance between boundarying vertice 2 & 3
+        length_side_3 = self.__vertices[2].distance_from_point(self.__vertices[0]) #calculate length of third side of triangle from the distance between boundarying vertice 3 & 1
         self.__perimeter_of_triangle = length_side_1 + length_side_2 + length_side_3 #Sum of lengths of sides of triangles
         return self.__perimeter_of_triangle
         
